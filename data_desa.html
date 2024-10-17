@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Desaku | Data Desa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="author" content>
+
+    <link href="assets/css/vendor.min.css" rel="stylesheet">
+    <link href="assets/css/app.min.css" rel="stylesheet">
+
+
+    <link href="assets/plugins/summernote/dist/summernote-lite.css" rel="stylesheet">
+    <link href="assets/plugins/blueimp-file-upload/css/jquery.fileupload.css" rel="stylesheet">
+    <link href="assets/plugins/tag-it/css/jquery.tagit.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="app" class="app">
+
+        <div id="header" class="app-header navbar navbar-expand-lg p-0">
+            <div class="container-xxl px-3 px-lg-5">
+                <button class="navbar-toggler border-0 p-0 me-3 fs-24px shadow-none" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="h-2px w-25px bg-gray-500 d-block mb-1"></span>
+                    <span class="h-2px w-25px bg-gray-500 d-block"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <div class="navbar-nav ms-auto mb-2 mb-lg-0 fw-500">
+                        <div class="nav-item me-2">
+                            <a href="index.html" class="nav-link">Beranda</a>
+                        </div>
+                        <div class="nav-item me-2">
+                            <a href="data_desa.html" class="nav-link">Data Desa</a>
+                        </div>
+                        <div class="nav-item me-2">
+                            <a href="rekap.html" class="nav-link">Rekap</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+     
+
+        <div class="py-5 bg-component">
+           
+            <div class="card mb-3">
+                <div class="card-header d-flex align-items-center bg-none fw-bold">
+                    Data Desa
+                </div>
+
+                <form id="fileupload" action="" name="file_upload_form" method="POST"
+                    enctype="multipart/form-data">
+                    <div class="card-body pb-2">
+                        <div class="fileupload-buttonbar mb-2">
+                            <div class="d-block d-lg-flex align-items-center">
+                                <div class="col-md-2 me-2">
+                                    <select class="form-select" id="provinsi">
+                                        <option value="">Pilih Provinsi</option>
+                                        <option value="maluku">Maluku</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-2 me-2">
+                                    <select class="form-select" id="kabupaten">
+                                        <option  value="">Pilih kabupaten</option>
+                                        <option value="maluku_barat_daya">Maluku Barat Daya</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-2 me-2">
+                                    <select class="form-select" id="kecamatan">
+                                        <option  value="">Pilih Kecamatan</option>
+                                        <option value="kisar_utara">Kisar Utara</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-2 me-2">
+                                    <select class="form-select" id="desa">
+                                        <option  value="">Pilih Kelurahan/Desa</option>
+                                        <option value="labelau">Labelau</option>
+                                    </select>
+                                </div>
+
+
+                                <button type="submit" id="submitBtn" class="btn btn-primary fs-13px fw-semibold me-2 mb-1 start">
+                                    <i class="fa fa-fw fa-search"></i>
+                                    <span>Submit</span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="row gx-0 align-items-center" id="data_desa" style="display: none;">
+                            <!-- <div class="col-sm-4">
+                                <img src="https://placehold.co/480x360/c9d2e3/212837" alt="" class="card-img rounded-0" />
+                            </div> -->
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="#">Desa Labelau</a></h5>
+                                    <p class="card-text">Labelau adalah sebuah desa di Kecamatan Kisar Utara, Kabupaten Maluku Barat Daya, Provinsi Maluku.</p>
+                                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                        additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div> -->
+                        </div>
+
+                       
+                        <div id="error-msg"></div>
+                    </div>
+                    
+                    
+                    
+                </form>
+            </div>
+        </div>
+
+        <div id="blog" class="py-5 bg-component">
+            <div class="container-xxl p-3 p-lg-5">
+
+            </div>
+        </div>
+
+        <div id="blog" class="py-5 bg-component">
+            <div class="container-xxl p-3 p-lg-5">
+
+            </div>
+        </div>
+
+
+        
+        <div id="footer" class="py-5 bg-gray-800 text-body text-opacity-75" data-bs-theme="dark">
+            <div class="container-xxl px-3 px-lg-5">
+                <div class="row gx-lg-5 gx-3 gy-lg-4 gy-3">
+                    <div class="col-lg-3 col-md-6">
+
+                        <h5>Media Sosial</h5>
+                        <div class="d-flex">
+                            <a href="#" class="me-2 text-body text-opacity-50"><i
+                                    class="fab fa-lg fa-facebook fa-fw"></i></a>
+                            <a href="#" class="me-2 text-body text-opacity-50"><i
+                                    class="fab fa-lg fa-instagram fa-fw"></i></a>
+                            <a href="#" class="me-2 text-body text-opacity-50"><i
+                                    class="fab fa-lg fa-twitter fa-fw"></i></a>
+                            <a href="#" class="me-2 text-body text-opacity-50"><i
+                                    class="fab fa-lg fa-youtube fa-fw"></i></a>
+                            <a href="#" class="me-2 text-body text-opacity-50"><i
+                                    class="fab fa-lg fa-linkedin fa-fw"></i></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <hr class="text-body text-opacity-50">
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-lg-0">
+                        <div class="footer-copyright-text">&copy; 2024 Desaku</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="assets/js/vendor.min.js" type="69e01f496ef34f9e1a093c1a-text/javascript"></script>
+    <script src="assets/js/app.min.js" type="69e01f496ef34f9e1a093c1a-text/javascript"></script>
+
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
+        type="69e01f496ef34f9e1a093c1a-text/javascript"></script>
+    <script src="assets/plugins/lity/dist/lity.min.js" type="69e01f496ef34f9e1a093c1a-text/javascript"></script>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3Q0VGQKY3"
+        type="69e01f496ef34f9e1a093c1a-text/javascript"></script>
+    <script type="69e01f496ef34f9e1a093c1a-text/javascript">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-Y3Q0VGQKY3');
+	</script>
+    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="69e01f496ef34f9e1a093c1a-|49" defer></script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+        integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+        data-cf-beacon='{"rayId":"8d340f841f9e561b","version":"2024.10.1","r":1,"token":"4db8c6ef997743fda032d4f73cfeff63","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}'
+        crossorigin="anonymous"></script>
+
+    <script>
+         document.getElementById('submitBtn').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent form submission if any
+        
+        const provinsi = document.getElementById('provinsi').value;
+        const kabupaten = document.getElementById('kabupaten').value;
+        const kecamatan = document.getElementById('kecamatan').value;
+        const desa = document.getElementById('desa').value;
+
+        if (provinsi && kabupaten && kecamatan && desa) {
+            document.getElementById('data_desa').style.display = 'block'; // Show message
+        } else {
+            document.getElementById('data_desa').style.display = 'none'; // Hide message if not all selected
+            alert('Harap pilih semua field terlebih dahulu!');
+        }
+    });
+    </script>
+
+</body>
+
+</html>
